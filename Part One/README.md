@@ -8,14 +8,6 @@ Amazon's scale — from a three-room startup in 1995 to an organization of sever
 
 ---
 
-### 1. Principles Infused Into Every Capillary of the Operation
-
-Amazon treats its Leadership Principles not as poster-and-screensaver aspirations but as load-bearing infrastructure. Three design choices make this possible:
-
-- **Universal touchpoints.** The LPs are the explicit rubric for hiring interviews (5–7 interviews per candidate, each mapped to specific principles), performance reviews, and promotion decisions. There is no parallel evaluation criteria running alongside them.
-- **Social enforcement.** Because the vocabulary is common knowledge, a short-term or competitor-centric proposal in a meeting is self-correcting — the room notices before a manager has to intervene. This converts culture from a top-down control into a peer-level default.
-- **Deliberate, debated language.** The principles were not written by committee consensus alone; specific, sometimes provocative phrasing (e.g., "leaders do not believe their body odor smells of perfume" under Earn Trust) was preserved over blander alternatives because specificity drives adoption better than generic corporate language.
-
 #### Amazon's 14 Leadership Principles
 
 1. **Customer Obsession.** Leaders start with the customer and work backwards. They work vigorously to earn and keep customer trust. Although leaders pay attention to competitors, they obsess over customers.
@@ -32,6 +24,16 @@ Amazon treats its Leadership Principles not as poster-and-screensaver aspiration
 12. **Dive Deep.** Leaders operate at all levels, stay connected to the details, audit frequently, and are skeptical when metrics and anecdotes differ. No task is beneath them.
 13. **Have Backbone; Disagree and Commit.** Leaders are obligated to respectfully challenge decisions when they disagree, even when doing so is uncomfortable or exhausting. Leaders have conviction and are tenacious. They do not compromise for the sake of social cohesion. Once a decision is determined, they commit wholly.
 14. **Deliver Results.** Leaders focus on the key inputs for their business and deliver them with the right quality and in a timely fashion. Despite setbacks, they rise to the occasion and never settle.
+
+---
+
+### 1. Principles Infused Into Every Capillary of the Operation
+
+Amazon treats its Leadership Principles not as poster-and-screensaver aspirations but as load-bearing infrastructure. Three design choices make this possible:
+
+- **Universal touchpoints.** The LPs are the explicit rubric for hiring interviews (5–7 interviews per candidate, each mapped to specific principles), performance reviews, and promotion decisions. There is no parallel evaluation criteria running alongside them.
+- **Social enforcement.** Because the vocabulary is common knowledge, a short-term or competitor-centric proposal in a meeting is self-correcting — the room notices before a manager has to intervene. This converts culture from a top-down control into a peer-level default.
+- **Deliberate, debated language.** The principles were not written by committee consensus alone; specific, sometimes provocative phrasing (e.g., "leaders do not believe their body odor smells of perfume" under Earn Trust) was preserved over blander alternatives because specificity drives adoption better than generic corporate language.
 
 **Implication for other organizations:** A values statement only functions as a mechanism if it is *unavoidable* — present in the artifacts (interview scorecards, review templates) people are already required to fill out, not in a separate document nobody opens.
 
