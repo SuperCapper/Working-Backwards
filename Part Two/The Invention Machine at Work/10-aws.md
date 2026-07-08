@@ -1,3 +1,44 @@
 # Chapter 10 — AWS
 
-_Summary not yet written._
+### Executive Summary
+
+Unlike Kindle, Prime, and Prime Video — each an extension of Amazon's existing retail business — AWS had **nothing to do with Amazon's core business** and created an entirely new class of customer: the software developer. The chapter poses two questions and answers both the same way: single-threaded teams applying the Working Backwards process, obsessively, to a genuinely new customer's needs — not a grand cloud-computing strategy conceived top-down. AWS began as a narrow experiment inside Amazon's affiliate program, grew through founder-level attention and a series of small, autonomous bets, and only later became the deliberate, general-purpose cloud business built by Andy Jassy's team — a case study in how "being Amazonian" let a tiny, initially unglamorous seed become (per the book) a $35B/year division.
+
+### 1. The Accidental Origin: Product Data XML for Affiliates
+
+In 2001, Colin Bryar's Associates (affiliate) team hit a wall: affiliates wanted design control over how Amazon products appeared on their own sites, but Amazon's design team couldn't scale to support each one individually. The fix, launched March 2002, was to stop delivering a finished visual product and instead expose the raw underlying **product data as XML** — letting affiliates' own developers build whatever presentation they wanted. This was a genuine risk on two fronts: it shifted the target audience from non-technical site owners to developers (requiring an SDK, documentation, and a discussion forum Amazon had never needed before), and it meant sharing what many inside Amazon considered a **protected competitive asset** — the product catalog and its associated behavioral data ("customers who bought this also bought X") — with outside parties, constrained only by modest usage restrictions.
+
+### 2. The Signal: Developers Built Things Amazon Never Imagined
+
+Within hours of a low-key email announcement (no press release), affiliates were posting self-built applications on the discussion board — a trivia game using cover art, a "virtual bookshelf" for personal media collections, a stripped-down text-only mobile storefront nicknamed "Amazon Lite," and a network-graph visualization of the catalog nicknamed "Amazon Graph." None of these had been anticipated. The real insight Colin brought to Bezos wasn't what Amazon had built — it was **what external developers spontaneously built with raw access to a capability**, a pattern that previewed the entire logic of AWS: expose primitives, and let developers surprise you.
+
+### 3. Bezos's Direct Involvement and the Culture of Small Seeds
+
+Bezos's famous same-day summons ("How about now?") led to him personally reviewing the affiliate sites and immediately directing the team to "double down." Getting additional engineering headcount at Amazon was notoriously difficult, but the visible traction made it easy — Rob Frederick's team, fresh off a related mobile-commerce XML project (Amazon Anywhere), volunteered enthusiastically. Amazon's first developer conference drew a total of **eight attendees** (two flown in from Europe, one a teenager requiring a legal sign-off), including Jeff Barr, a local attendee who described the day as a "light-bulb moment" and joined Amazon weeks later — he remains AWS's chief evangelist. Bezos's 2006 shareholder letter is quoted directly to explain why Amazon tolerated pursuing something this small: the company's own history of watching "$10 million seeds turn into billion-dollar businesses" had built a culture where senior leaders running billion-dollar units congratulate a $10M side project's growth rate rather than dismissing its scale — patience enabled by long-term thinking, not indifference to scale.
+
+### 4. From Experiment to Platform — and a New Customer
+
+The July 2002 official Amazon Web Services 1.0 launch (later renamed the Amazon Product API) opened the same capability to any developer, not just affiliates — and surfaced a second surprise: **some of the heaviest early users were Amazon's own internal engineers**, who found the new external-facing service easier to use than Amazon's own internal tools. Parallel projects (**3-Ring Binder**, which let partners like Target build Amazon-powered storefronts at their own URLs, and **Seller Central**, web services for Amazon's own third-party sellers) reinforced the same pattern independently: software was starting to be built differently, and Amazon kept rediscovering that fact from multiple angles before it had a unified strategy.
+
+### 5. Why Amazon Moved First — Two Structural Insights
+
+Once Andy Jassy took over building what became modern AWS (succeeding Colin as Bezos's technical shadow), two additional observations shaped the decision to build **general-purpose** infrastructure services rather than another ecosystem-reinforcing API (the category eBay's and Google's contemporary developer APIs both fell into):
+
+- **"Undifferentiated heavy lifting."** A conversation with Flickr co-founder Stewart Butterfield at a tech conference crystallized the idea: most engineering teams spend roughly half their time on infrastructure plumbing (scaling databases, servers) common to nearly every company, rather than on what makes their product unique. The core primitives — storage, compute, messaging, notifications — were **well understood technology**, just never offered as metered, self-service web infrastructure.
+- **A perishable core competency.** Operating one of the world's largest websites had given Amazon operational skill (storing, computing on, and serving massive data at scale) that few companies could match in 2002 — but the team correctly predicted this capability would commoditize over time (the book notes that storing/serving millions of photos, a serious project in 2002, could become "a homework assignment" within years). That commoditization curve created urgency: whoever offered these primitives as a service first would gain a head start, even without a guarantee of ultimately winning. This is explicitly tied to the **Bias for Action** principle — "many decisions and actions are reversible and do not need extensive study."
+
+Early AWS PR/FAQs used a deliberately vivid customer-experience anchor: **a student in a dorm room should have access to the same world-class computing infrastructure as any Amazon engineer** — a metaphor the book credits with helping crystallize product direction across teams.
+
+### 6. Rigor at Speed: The S3 Pricing Case Study
+
+The chapter's sharpest illustration of Working Backwards paying for itself is a pricing question that seemed almost administrative. An early S3 PR/FAQ proposed simple tiered monthly subscription pricing based on typical storage volume. Rather than accept a plausible-sounding default, the team kept interrogating the question — because usage patterns (object size, read/write ratio, durability requirements) were genuinely unknown, any fixed-tier guess risked being wrong in ways that would be expensive to unwind post-launch. The team pivoted instead to **cost-following pricing**: charge customers based on the actual resources their specific usage consumed, so the pricing model itself would automatically adapt to any usage pattern rather than betting on one. This decision mattered enormously after launch — Amazon initially priced around storage and bandwidth, then discovered (per AWS CTO Werner Vogels) that **request volume** was an equally significant cost driver for customers with many small files. Because the architecture was cost-following rather than fixed-tier by design, this correction was a modest adjustment rather than a painful renegotiation of a subscription structure already sold to customers.
+
+Notably, engineers in the room found the process frustrating in the moment — one told Colin, *"We're software engineers, not pricing specialists with MBAs. We want to write software, not more Word documents."* Bezos's response was to insist on completing the inquiry anyway, on the logic that at AWS's target scale, a service not built correctly from the first release would consume all of a team's future capacity just staying operational, leaving no room to build new features.
+
+---
+
+### Bottom Line
+
+AWS shows that Bias for Action and Working Backwards are not in tension — Amazon was genuinely racing against competitors who were "swimming in the same primordial soup" of web-services ideas, but chose to spend the extra time up front interrogating assumptions (like S3 pricing) specifically because getting the foundational design right the first time was the faster path to a durable, scalable business, not a slower one. Only two of the initial half-dozen services (S3 and EC2) became runaway hits — a reminder that even with rigorous process, most individual bets inside a big strategic wager still fail; what compounds is the willingness to keep making them.
+
+*Source: Chapter 10, "AWS," in Colin Bryar & Bill Carr, Working Backwards (St. Martin's Publishing Group, 2021).*
